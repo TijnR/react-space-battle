@@ -1,0 +1,99 @@
+.bullet {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 1000px;
+  left: 0;
+  right: 0;
+  top: -1000px;
+  margin: 0 auto;
+  padding-right: 1px;
+}
+
+.bullet__circle {
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: #f1e87e;
+  box-shadow: #f1e87e 0px 22px 70px 4px;
+  animation: charge 5000ms infinite linear;
+}
+
+.bullet__beam {
+  width: 0px;
+  height: 0px;
+  border-radius: 50px 50px;
+  margin-bottom: 5px;
+  background-color: #f1e87e;
+  box-shadow: #f1e87e 0px 22px 70px 4px;
+  transform: rotateY(180deg);
+  animation: blast 5000ms infinite linear;
+}
+
+@keyframes charge {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 1;
+  }
+  10% {
+    width: 0px;
+    height: 0px;
+  }
+  40% {
+    width: 12px;
+    height: 12px;
+  }
+  60% {
+    width: 12px;
+    height: 12px;
+    box-shadow: #c63b2f 0px 22px 70px 4px;
+    background-color: #c63b2f;
+    opacity: 1;
+  }
+  100% {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+}
+
+@keyframes blast {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+  10% {
+    width: 0px;
+    height: 0px;
+    opacity: 1;
+  }
+  55% {
+    width: 0px;
+    height: 0px;
+  }
+
+  60% {
+    width: 22px;
+    height: 500px;
+    box-shadow: #c63b2f 0px 22px 70px 4px;
+    background-color: #c63b2f;
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+    width: 0px;
+    height: 400px;
+  }
+  81% {
+    height: 0px;
+  }
+  100% {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+  }
+}

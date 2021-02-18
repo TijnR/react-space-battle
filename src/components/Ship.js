@@ -1,10 +1,19 @@
 import React from 'react'
 import { ReactComponent as ShipIcon } from '../assets/ships/pixel-ship.svg'
+import Bullet from './Bullet'
 
 const shipContainerStyles = {
   width: 60,
   height: 60,
   position: 'absolute',
+}
+
+const shipInnerContainerStyles = {
+  position: 'relative',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
 }
 
 function Ship() {
@@ -16,9 +25,14 @@ function Ship() {
   }
 
   return (
-    <div ref={(el) => setPosition(el)} style={shipContainerStyles}>
-      <ShipIcon />
-    </div>
+    <>
+      <div ref={(el) => setPosition(el)} style={shipContainerStyles}>
+        <div style={shipInnerContainerStyles}>
+          <Bullet />
+          <ShipIcon />
+        </div>
+      </div>
+    </>
   )
 }
 
